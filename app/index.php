@@ -2,7 +2,7 @@
     session_start();
  
     if (isset($_POST['username'], $_POST['password'])) {
-        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['username'] = htmlspecialchars($_POST['username']);
     }
 
     $logged = isset($_SESSION['username']) ? true : false;
