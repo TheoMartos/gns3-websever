@@ -16,21 +16,47 @@
     </head>
     
     <body>
-        <h1>Hello from Docker !</h1>
+        <h1>Login page</h1>
         <?php if ($logged) { ?>
             <div>
                 Hello <?php echo $_SESSION['username'].PHP_EOL; ?>
             </div>
+            <br>
+            <br>
+            <a href="logout.php"><button>Logout</button></a>
         <?php }  else { ?>
             <form method="post" action="index.php">
-                <label for="username">Nom d'utilisateur :</label>
-                <input name="username" type="text" id="username"><br>
-                <label for="password">Mot de passe :</label>
-                <input name="password" type="password" id="password"><br>
-                <input type="submit" value="Connexion">
-            <from>
+                <div id="container">
+                    <div id="labels">
+                        <label for="username">Username :</label><br>
+                        <label for="password">Password :</label><br>
+                    </div>
+
+                    <div id="inputs">
+                        <input name="username" type="text" id="username"><br>
+                        <input name="password" type="password" id="password"><br>
+                    </div>
+                </div>
+                <input type="submit" value="Login">
+            </from>
         <?php } ?>
-        <br>
-        <a href="logout.php">Logout</a>
     </body>
+
+    <style>
+        h1 {
+            text-align: center
+        }
+
+        form #container {
+            display: flex;
+        }
+
+        form div {
+            width: 350px;
+        }
+
+        #container label, #container input {
+            margin-bottom: 5px;
+        }
+    </style>
 </html>
