@@ -17,6 +17,7 @@
         else
         {
             $login_error = "Bad credentials";
+            http_response_code(403);
         }
     }
 ?>
@@ -69,7 +70,7 @@
         }
 
         form {
-            width: 355px;
+            width: 500px;
             margin: auto;
         }
 
@@ -78,7 +79,7 @@
         }
 
         form div {
-            width: 350px;
+            width: 100%;
         }
 
         label {
